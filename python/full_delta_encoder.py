@@ -138,14 +138,14 @@ delta_image = delta_encode(image)
 reconstructed_image = delta_decode(delta_image)
 
 
-cv2.imwrite("images/outputImages/delta_encoded.png", delta_image.astype(np.int16))
+cv2.imwrite("images/outputImages/delta/delta_encoded.png", delta_image.astype(np.int16))
 
 # writes images as .png if 32bit and .jpg if 24bit RGB
 
 if channels == 4:
-    cv2.imwrite("images/outputImages/delta_reconstructed_image.png", reconstructed_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    cv2.imwrite("images/outputImages/delta/delta_reconstructed_image.png", reconstructed_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
 else:
-    cv2.imwrite("images/outputImages/delta_reconstructed_image.jpg", reconstructed_image, [cv2.IMWRITE_JPEG_QUALITY, 100])
+    cv2.imwrite("images/outputImages/delta/delta_reconstructed_image.jpg", reconstructed_image, [cv2.IMWRITE_JPEG_QUALITY, 100])
 
 
 fig, ax = plt.subplots(1, 3, figsize=(15, 5))
